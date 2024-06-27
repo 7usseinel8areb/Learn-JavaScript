@@ -30,3 +30,9 @@ if (country === "Syria") {
 }
 
 console.log(price, country);
+
+
+//-----------------------------------------
+//Ternary operator or condition
+country = price >= 500 ? "Damietta" : "Mansoura";
+console.log(country);
