@@ -13,3 +13,20 @@ else {
 }
 
 console.log(price, country);
+
+
+
+//-----------------------------------------
+//Nested if
+if (country === "Syria") {
+    price *= 10;
+    if (price >= 1000) {
+        country = "Romania"
+    } else {
+        country = "Iraq";
+    }
+} else {
+    country = "Kuwait";
+}
+
+console.log(price, country);
