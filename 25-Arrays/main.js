@@ -103,3 +103,24 @@ console.log(myArray);
 
 myArray.reverse();//at the sorted array not the original
 console.log(myArray);//['Sayed', 'Mohamed', '90', 20, 1000, 100, '10', 10, -20, -10]
+
+//------------------------------------------------------------------------------------------------
+/*
+    Array Methods for slicing
+        slice(start, end)
+        slice() => all array
+        splice(start, NumberOfDeletedElements, ItemsToAdd)
+*/
+
+myfriends = ["ahmed", "Ali", "Hussein", "Maya", "Hossam", "Rahma"];
+console.log(myfriends.slice());
+console.log(myfriends.slice(2));
+console.log(myfriends.slice(1, 3));
+console.log(myfriends.slice(-3));
+console.log(myfriends.slice(1, -2));
+console.log(myfriends.slice(-4, -2));
+
+
+//             start  numberOfDeletedElements   new elements
+myfriends.splice(3   , 2,                       "Hamed", "Ayman", "Kamel", "abeer");
+console.log(myfriends);
