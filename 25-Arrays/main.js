@@ -68,3 +68,24 @@ console.log(myfriends);
 myfriends.pop();
 myfriends.pop();
 console.log(myfriends);
+
+
+//---------------------------------------------------------------------------------------------
+/*
+    Array Methods for searching
+        indexOf(element, Starting position)
+        lastInexOf(element, Starting position)
+        includes(valueToFound, starting index)
+*/
+
+
+myfriends = ["Ahmed", "Mohamed", "Sayed", "Alaa"];
+console.log(myfriends.indexOf("Mohamed"));
+console.log(myfriends.indexOf("Mohamed",2));//-1 if was not found 
+
+console.log(myfriends.lastIndexOf("Mohamed"));
+console.log(myfriends.lastIndexOf("Mohamed",-2));
+
+console.log(myfriends.includes("Mohamed"));
+console.log(myfriends.includes("Mohamed",2));
+console.log(myfriends.includes("Hussein",2));
