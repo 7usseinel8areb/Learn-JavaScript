@@ -43,3 +43,28 @@ console.log(myfriends);//
 
 myfriends.length = 5;//Cant restore the element removed
 console.log(myfriends);
+
+
+//----------------------------------------------------------------------------------------------
+/*
+    Array Methods
+        unshift("", "") Add element to the first
+        Push("","") Add to th end
+        shift() Remove from the first
+        Pop() Remove from the last
+*/
+
+myfriends = ["Ahmed", "Mohamed", "Sayed", "Alaa"];
+myfriends.unshift("Malak");
+myfriends.push("Hussein");
+console.log(myfriends);
+
+
+
+myfriends.shift();
+myfriends.shift();
+console.log(myfriends);
+
+myfriends.pop();
+myfriends.pop();
+console.log(myfriends);
