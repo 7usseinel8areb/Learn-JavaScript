@@ -88,4 +88,18 @@ console.log(myfriends.lastIndexOf("Mohamed",-2));
 
 console.log(myfriends.includes("Mohamed"));
 console.log(myfriends.includes("Mohamed",2));
-console.log(myfriends.includes("Hussein",2));
+console.log(myfriends.includes("Hussein", 2));
+
+//-----------------------------------------------------------------------------------------------
+/*
+    Arrays Methods for sorting and reversing
+        sort
+        reverse
+*/
+
+let myArray = [10, "Sayed", "Mohamed", "90", 1000, 100, 20, "10", -20, -10];
+myArray.sort()//[-10, -20, 10, '10', 100, 1000, 20, '90', 'Mohamed', 'Sayed']  ابجدي
+console.log(myArray);
+
+myArray.reverse();//at the sorted array not the original
+console.log(myArray);//['Sayed', 'Mohamed', '90', 20, 1000, 100, '10', 10, -20, -10]
