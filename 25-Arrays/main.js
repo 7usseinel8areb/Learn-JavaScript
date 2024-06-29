@@ -124,3 +124,30 @@ console.log(myfriends.slice(-4, -2));
 //             start  numberOfDeletedElements   new elements
 myfriends.splice(3   , 2,                       "Hamed", "Ayman", "Kamel", "abeer");
 console.log(myfriends);
+
+
+//-------------------------------------------------------------------------------------------------
+/*
+    Array Meyhods for join
+        array.concat(array) => Return a new array
+        join(Seperator) => exArray.join(" "), exArray.join(",")
+*/
+
+
+myfriends = ["ALi", "Hashem", "Hussein"];
+myArray = [1, 2, 3, 4, 5, 6];
+
+let concatResult = myfriends.concat(myArray);
+console.log(concatResult) //['ALi', 'Hashem', 'Hussein', 1, 2, 3, 4, 5, 6]
+
+
+let joinResult1 = myfriends.join(",");
+let joinResult2 = myArray.join("-");
+let joinResult3 = concatResult.join(" # ");
+
+
+console.log(joinResult1);//ALi,Hashem,Hussein
+console.log(joinResult2);//1-2-3-4-5-6
+console.log(joinResult3);//ALi # Hashem # Hussein # 1 # 2 # 3 # 4 # 5 # 6
+
+console.log(typeof joinResult1);//string
