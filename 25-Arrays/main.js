@@ -26,3 +26,20 @@ myfriends[3] = "Sameh";//We can replace element with array
 console.log(myfriends)
 
 console.log(Array.isArray(myfriends));
+
+//--------------------------------------------------------------------------------------------
+//Using length with array
+
+console.log(myfriends.length);//Now length = 4
+console.log(myfriends)
+
+//if i want to add new
+myfriends[myfriends.length] = "New element"
+console.log(myfriends.length)
+console.log(myfriends)
+
+myfriends.length = 3;
+console.log(myfriends);//
+
+myfriends.length = 5;//Cant restore the element removed
+console.log(myfriends);
