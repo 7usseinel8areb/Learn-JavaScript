@@ -77,3 +77,29 @@ function printHello(userName,age = "Unkown") {
 }
 
 printHello("Hussein");
+
+
+//---------------------------------------------------------------------------------
+/*
+    Functions
+        Rest parameters
+            Only one allowed
+            Must be last element
+*/
+
+function calc(num1, num2, num3, num4) {
+    return num1 + num2 + num3 + num4;
+}
+console.log(calc(10, 20, 30, 40));
+
+//if number of arguments is unkown? -> Rest parameter
+function calc2(...numbers) {
+    let sum = 0;
+    numbers.forEach(element => {
+        sum += element
+    });
+    return sum;
+}
+
+result = calc2(10, 20, 30, 40, 50, 60);
+console.log(result);
