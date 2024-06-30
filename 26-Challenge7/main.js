@@ -10,4 +10,9 @@ ans = my.slice(my.indexOf("Mazero"), my.indexOf("Osama")).reverse();
 //"Elham", "Mazero"
 console.log(ans);
 
-console.log(ans[zero].slice(zero++, --counter) + ans[zero].slice(counter));
+//Elzero
+ans1 = ans[zero].slice(zero++, --counter) + ans[zero].slice(counter)
+console.log(ans1);
+
+//rO
+console.log(ans1[++counter + zero] + (ans1[++counter + zero]).toUpperCase());
