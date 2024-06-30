@@ -103,3 +103,23 @@ function calc2(...numbers) {
 
 result = calc2(10, 20, 30, 40, 50, 60);
 console.log(result);
+
+
+//----------------------------------------------------------------------------------
+/*
+    Function Practice
+*/
+function showInfo(user = "Unknown", age = "Unknown", rate = 0, show = false, ...skills) {
+    document.write(`
+        <div>
+            <h2>Welcome, ${user}</h2>
+            <p>Age: ${age}</p>
+            <p>Hour Rate: $${rate}</p>
+            <p>${show === true ? `${skills.join(" | ")}` : `Not available to display`}</p>
+        </div>
+        <hr>
+    `);
+}
+showInfo("Hussein", 21, 1000, true, "C#", "Javascript", "C++", "ASP.Net Core");
+
+showInfo("Ali",20,30,false,"Python","Django")
