@@ -114,3 +114,45 @@ ans = mix.split('')
         .map(x => x * x);
 
 console.log(ans)
+
+
+
+
+//------------------------------------------------------------------------------------------------------------------
+/*
+    Reduce
+        resulting in a single output value
+
+        syntax
+            reduce(callBackFunction(Accumlator, Current value, Current index, Source array){},initialValue)
+*/
+
+let nums = [10, 20, 30, 40];
+
+//sum all numbers
+ans = nums.reduce((prev, curr, index, array) => {
+    return curr + prev;
+}, 1200);//if there is not init value the accumelator will be the init
+// 1200 + 100
+
+console.log(ans)
+
+//practice
+/*
+    Longest word
+    Remove chars + use reduce
+*/
+let theBiggest = ["Bla", "Propaganda", "Other", "AAA", "Battery", "Test"];
+//Return the longest word using reduce
+//reduce
+ans = theBiggest.reduce((acc, curr) => {
+    return curr.length >= acc.length ? curr : acc;
+})
+console.log(ans)
+
+
+//remove all @ then output one word but not with join
+let removeChars = ["E", "@", "@", "L", "Z", "@", "@", "E", "R", "@", "O"];
+ans = removeChars.filter(i => i != "@").reduce((prev, curr) => prev + curr /* `${prev}${curr}` */);
+
+console.log(ans)
