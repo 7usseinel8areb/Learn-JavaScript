@@ -146,3 +146,40 @@ user = {
 
 console.log(user.age);
 console.log(user.ageInDays());
+
+
+//--------------------------------------------------------------------------------------------------------------------
+/*
+    Object
+        Create object with create method
+*/
+
+user = {
+    age: 40,
+    doubleAge: function () {
+        return this.age * 2;
+    }
+}
+
+let obj = Object.create({});
+console.log(obj);
+obj.age = 20;
+console.log(obj);
+
+
+let cobyObj = Object.create(user/*prototype => a copy from another object will be crearted*/)
+console.log(cobyObj)
+console.log(cobyObj.doubleAge());
+cobyObj.age = 60;
+console.log(cobyObj.doubleAge());
+
+user = {
+    available: false,
+    checkWork: function () {
+        return this.available ? "available to work" : "not available to work";
+    }
+}
+
+console.log(user.checkWork());
+user.available = true;
+console.log(user.checkWork());
