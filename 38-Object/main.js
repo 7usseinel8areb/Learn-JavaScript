@@ -121,3 +121,28 @@ user = new Object({
     age:20
 })
 console.log(user.name);
+
+//--------------------------------------------------------------------------------------------------------------------
+/*
+    Object
+        this keyword = window
+*/
+
+console.log(this === window);//true
+
+console.log(this);//window
+
+document.getElementById("cl").onclick = function () {
+    //go to the owner
+    console.log(this);//<button id="cl">Click</button>
+}
+
+user = {
+    age: 20,
+    ageInDays: function () {
+        return this.age * 365;
+    }
+};
+
+console.log(user.age);
+console.log(user.ageInDays());
