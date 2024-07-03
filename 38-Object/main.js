@@ -92,3 +92,32 @@ console.log(user.addresses.EGY["three"]);
 console.log(user["addresses"]["EGY"]["one"]);
 
 console.log(user.checkAvailability());
+
+//--------------------------------------------------------------------------------------------------------------------
+/*
+    Object
+        Create with new keyword
+*/
+
+user = {};
+console.log(user);
+user.age = 20;
+user["name"] = "Hussein";
+user.sayHello = () => "Hello";
+console.log(user);
+console.log(user.sayHello());
+console.log("-----------------------------------------------");
+//New
+user = new Object();
+console.log(user);
+user.age = 20;
+user["name"] = "Hussein";
+user.sayHello = () => "Hello";
+console.log(user);
+console.log(user.sayHello());
+console.log("-----------------------------------------------");
+user = new Object({
+    name: "Hussein",
+    age:20
+})
+console.log(user.name);
