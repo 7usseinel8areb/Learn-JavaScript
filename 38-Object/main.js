@@ -53,3 +53,42 @@ console.log(user["100"]);
 //dunamic property name
 let myVar = "country";
 console.log(user.myVar);//undefined
+
+//--------------------------------------------------------------------------------------------------------------------
+/*
+    Object
+        Nested objects
+*/
+
+user = {
+    theName: "Hussein",
+    theAge: 20,
+    skills: ["C#", "Javascript", "C++", "Python"],
+    available: false,
+    addresses: {
+        KSA: "Riyadh",
+        EGY: {
+            one:"Cairo",
+            two:"Alexandria",
+            three:"Damietta",
+        }
+    },
+
+    // checkAvailability: user.available?"Available to work":"Not available to work"
+    checkAvailability: () => {
+        return this.available === true ? "Available to work" : "Not available to work";
+    }
+};
+
+console.log(user.theName);
+console.log(user.theAge);
+console.log(user.skills);
+console.log(user.skills.join(" | "));
+console.log(user.skills[0]);
+console.log(user.addresses);
+console.log(user.addresses.EGY);
+console.log(user.addresses.EGY.two);
+console.log(user.addresses.EGY["three"]);
+console.log(user["addresses"]["EGY"]["one"]);
+
+console.log(user.checkAvailability());
