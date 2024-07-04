@@ -17,3 +17,13 @@ console.log(e);// Kareem but we can't override at line 8 so we can't define kare
 //if i want 1 , 2 , 4
 let [x, y, , z] = myFriends;
 console.log(z);//Ali
+
+//----------------------------------------------------------------------------------------------------------------------------------
+/*
+    Destructuring 
+        Advanced examples
+*/
+
+myFriends = ["Ahmed", "Sayed", "Hussein", "Ali", ["Kamal", "Waleed",["Rahma","Yaseen"]]];
+let [, , , , [, , [m]]] = myFriends;
+console.log(m)
