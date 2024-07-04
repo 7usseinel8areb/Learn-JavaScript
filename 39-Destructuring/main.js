@@ -46,3 +46,36 @@ a = 5, b = 7;
 //new by destructuring
 [b, a ]= [a, b];
 console.log(a, b);
+
+//----------------------------------------------------------------------------------------------------------------------------------
+/*
+    Destructuring
+        Destructuring object
+*/
+
+let user = {
+    name: "Hussein",
+    age: 20,
+    title: "Backend developer",
+    country: "Egypt"
+};
+let user2 = {
+    name: "Kamal",
+    age: 21,
+    title: "Developer",
+    country: "Morroco"
+};
+
+console.log(user.name);
+console.log(user.age);
+console.log(user.title);
+console.log(user.country);
+
+
+let { name, age, title } = user;
+console.log(title, "From distrucured");
+
+
+({ name, age, title } = user2);//error if there is no let or vart or const must be at ()
+
+console.log(name);
