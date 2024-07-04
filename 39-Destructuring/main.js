@@ -27,3 +27,22 @@ console.log(z);//Ali
 myFriends = ["Ahmed", "Sayed", "Hussein", "Ali", ["Kamal", "Waleed",["Rahma","Yaseen"]]];
 let [, , , , [, , [m]]] = myFriends;
 console.log(m)
+
+
+//----------------------------------------------------------------------------------------------------------------------------------
+/*
+    Destructuring
+        Swapping variables
+*/
+a = 5, b = 7;
+//old 
+let temp = a;
+a = b;
+b = temp;
+console.log(a, b);//7 , 5
+
+a = 5, b = 7;
+
+//new by destructuring
+[b, a ]= [a, b];
+console.log(a, b);
