@@ -79,3 +79,45 @@ console.log(title, "From distrucured");
 ({ name, age, title } = user2);//error if there is no let or vart or const must be at ()
 
 console.log(name);
+
+//----------------------------------------------------------------------------------------------------------------------------------
+/*
+    Destructuring
+        Destructuring object
+            Naming the vaiables
+            Add new property
+            Nested object
+            Destructuring the nested object
+*/
+
+user = {
+    name: "Hussein",
+    age: 20,
+    title: "Backend developer",
+    country: "Egypt",
+    skills: {
+        html: 70,
+        css:80,
+    },
+};
+
+//Renaming the properties
+
+({ n, a, t } = user);
+console.log(n, a, t); // => will be undefined
+
+({ name: n, age: a, title: t, country } = user);
+console.log(n, a, t);
+
+
+//Adding new property
+({ name: n, age: a, title: t, country, color: c = "Yellow" } = user);
+console.log(c);
+// console.log(color)//error not defined
+
+
+//Nested object
+({ name: n, age: a, title: t, country, color: c = "Yellow", skills: { html: h,css:cs } } = user);
+console.log(h)
+console.log(cs)
+
