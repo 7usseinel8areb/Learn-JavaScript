@@ -121,3 +121,48 @@ console.log(c);
 console.log(h)
 console.log(cs)
 
+//----------------------------------------------------------------------------------------------------------------------------------
+/*
+    Destructuring
+        Destructuring Function parameters
+*/
+
+user = {
+    name: "Hussein",
+    age: 20,
+    title: "Backend developer",
+    country: "Egypt",
+    skills: {
+        html: 70,
+        css:80,
+    },
+};
+
+
+function showDetails(obj) {
+    console.log(user.name);
+    console.log(user.age);
+    console.log(user.title)
+}
+
+//with destructuring
+function showDetails2( { name:n, age:a, title:t, skills: { html:h } }= user) {
+    console.log(n);
+    console.log(a);
+    console.log(t);
+    console.log(h);
+}
+showDetails2();
+
+user2 = {
+    name: "Malak",
+    age: 30,
+    title: "Frontend developer",
+    country: "Libya",
+    skills: {
+        html: 70,
+        css:80,
+    },
+};
+console.log("------------------")
+showDetails2(user2)
