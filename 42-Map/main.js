@@ -153,3 +153,36 @@ myMap.clear();
 console.log(myMap.has(''));// false because it was deleted
 console.log(myMap.has("Kamal"));// false all array was cleared
 console.log(myMap.size);//0
+
+
+
+//-----------------------------------------------------------------------------------------------
+/*
+    Map
+        Map vs WeakMap
+        
+        Weak 
+            allows garbage collector to do its task but not map
+        
+        Map => Can be Anything
+        WeakMap => Can be only objects
+
+        Same to Map and Object comparrison
+*/
+console.log("############################################");
+
+console.log("################## Map");
+
+let mapUser = { name: "Hussein" };
+myMap = new Map();
+myMap.set(mapUser, myMap);
+mapUser = null;//override the reference
+console.log(myMap);//mapUser still with the first value at the myMap
+
+console.log("################## WeakMap");
+
+let weakMapUser = { name: "Hussein" };
+let myWeakMap = new WeakMap();
+myWeakMap.set(weakMapUser, "Object");
+weakMapUser = null;//override the reference
+console.log(myWeakMap);//At any moment the value will be removed from the memory
