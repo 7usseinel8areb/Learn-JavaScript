@@ -166,3 +166,26 @@ user2 = {
 };
 console.log("------------------")
 showDetails2(user2)
+
+//----------------------------------------------------------------------------------------------------------------------------------
+/*
+    Destructuring mixed content
+*/
+
+user = {
+    name: "Hussein",
+    age: 20,
+    skills: ["C#", "JS", "C++", "Python"],
+    addresses: {
+        "first": "Kuwait",
+        "second":"Egypt"
+    }
+}
+
+let { name: nn, age: aa, skills: [, j, , p], addresses: { second: eg } } = user;
+console.log(nn);
+console.log(aa);
+console.log(j);
+console.log(p);
+console.log(eg);
+
