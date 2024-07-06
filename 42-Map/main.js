@@ -104,3 +104,52 @@ for (let key of Object.keys(myObject)) {
 for (let key in myObject) {
     console.log(key,myObject[key]);
 }
+
+
+//-----------------------------------------------------------------------------------------------
+/*
+    Map
+        Methods
+            set
+            get
+            delete
+            create
+            has
+*/
+console.log("############################################");
+
+console.log("################## looping1")
+
+myMap = new Map();
+myMap.set(1, "Hussein");
+myMap.set('', "Moza");
+myMap.set("Kamal", "20");
+for (let key of myMap.keys()) {
+    console.log(key,myMap.get(key))
+}
+
+console.log("################## looping2")
+
+myMap = new Map([
+    [1, "Hussein"],
+    ['', "Malak"],
+    ["Kamal", 20]
+]);
+
+for (let [key, val] of myMap) {
+    console.log(key, val);
+}
+
+console.log("################## delete & has");
+
+myMap.delete('');
+console.log(myMap.has(''));// false because it was deleted
+console.log(myMap.has("Kamal"));// true
+console.log(myMap.size);//2
+
+console.log("################## clear");
+
+myMap.clear();
+console.log(myMap.has(''));// false because it was deleted
+console.log(myMap.has("Kamal"));// false all array was cleared
+console.log(myMap.size);//0
