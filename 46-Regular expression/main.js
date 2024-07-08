@@ -297,3 +297,31 @@ console.log(serials.match(serialRegEx));// S[Four or five]S // ['S3000S', 'S5000
 
 serialRegEx = /\bS\d{4,}S\b/ig;
 console.log(serials.match(serialRegEx));// S[At least four]S // ['S3000S', 'S50000S', 'S950000S']
+
+//---------------------------------------------------------------------------------------------------------------
+/*
+    Regular expression
+
+    Quantifires
+    $ => End with something
+    ^ => start With someyhing
+    ?= => followed by someyhing
+    ?! => not followed by someyhing
+
+*/
+
+console.log("####".repeat(10));
+
+myString = "We Love Programming";
+names = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+
+console.log(/ing$/ig.test(myString));//t
+console.log(/(ing|lZ)$/ig.test(names));//t
+console.log(/^we/ig.test(names));//f
+console.log(/^we/ig.test(myString));//t
+console.log(/^\d/ig.test(names));//t
+console.log(/^\s/ig.test(names));//f
+
+
+console.log(names.match(/\d\w{5}(?=Z)/ig));// ['1Osama', '2Ahmed', '5Gamal']
+console.log(names.match(/\d\w{8}(?!Z)/ig));// ['3Mohammed']
