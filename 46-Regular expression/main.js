@@ -204,3 +204,43 @@ console.log(email.match(Word));
 //To find valid emails and ends with com and net
 let valid = /\w@\w.(com|net)/g;
 console.log(email.match(valid));//['O@g.com', 'O@g.net', 'A@Y.com', '1@1.com']
+
+
+//---------------------------------------------------------------------------------------------------------------
+/*
+    Regular Expression
+        Charachter classes
+            \b => matches at the beggining or the end of a ward
+            \B => matches not at beggining / end of the word
+        
+        Test methods
+            pattern.test(input);
+*/
+
+console.log("####".repeat(10));
+
+let names = "Sayed 1Spam 2Spam 3Spam Spam4 Spam5 Osama Ahmed Aspamo";
+
+//this means spam at the beggining of the word
+let spamregEx = /\bspam/ig
+console.log(names.match(spamregEx));//['Spam', 'Spam']
+
+//this means spam at the end of the word
+spamregEx = /spam\b/ig
+console.log(names.match(spamregEx));//['Spam', 'Spam', 'Spam']
+
+
+//this means spam at start and end of the word
+spamregEx = /\bspam\b/ig
+console.log(names.match(spamregEx));//null
+
+//this means spam at start and end of the word
+spamregEx = /(\bspam|spam\b)/ig
+console.log(names.match(spamregEx));//['Spam', 'Spam', 'Spam', 'Spam', 'Spam']
+
+
+
+//Test
+console.log(spamregEx.test(names));//true
+console.log(/(\bspam|spam\b)/ig.test("Hussein"));//false
+console.log(/(\bspam|spam\b)/ig.test("1Spam"));//true
