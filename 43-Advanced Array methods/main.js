@@ -94,3 +94,69 @@ myArray.copyWithin(1, -2, -1);
 console.log(myArray);
 
 console.log("####".repeat(10));
+//---------------------------------------------------------------------------------------------------
+/*
+    Array Methods
+        Array.some(callBackFunction(element, index, arr),this)
+*/
+
+
+myArray = [1, 2, 3, 4, 5, "Hussein"];
+
+
+//check if there is string in the array
+let x = myArray.some((element, index, array) => {
+    return isNaN(element);
+});
+console.log(x);//t
+
+
+myArray = [1, 2, 3, 4, 5];
+x = myArray.some((element, index, array) => {
+    return isNaN(element);
+});
+console.log(x);//f
+
+x = myArray.some((element, index, array) => {
+    return element > 5;
+});
+console.log(x);//f
+
+x = myArray.some((element, index, array) => {
+    return element > 4;
+});
+console.log(x);//t
+
+
+let myNumber = 10;
+
+x = myArray.some((element) => {
+    return element >= this; // this = myNumber
+}, myNumber)
+console.log(x);//f
+
+
+
+//Functino to check if the array contains the given value
+function check(arr, val) {
+    return arr.some((element) => {
+        return element === val;
+    }, val);
+}
+
+let range = {
+    min: 10,
+    max: 20
+}
+
+let checkInRange = function (arr, { min: mn, max: mx} = range) {
+    return arr.some(function (element) {
+        return element >= this.mn && element <=this.mx;
+    },{mn,mx})
+}
+
+myArray = [1, 2, 3, 30, 10, 39];
+console.log(checkInRange(myArray, range));//t
+
+myArray = [1, 2, 3, 4, 5, 6];
+console.log(checkInRange(myArray, range));//f
