@@ -244,3 +244,34 @@ console.log(names.match(spamregEx));//['Spam', 'Spam', 'Spam', 'Spam', 'Spam']
 console.log(spamregEx.test(names));//true
 console.log(/(\bspam|spam\b)/ig.test("Hussein"));//false
 console.log(/(\bspam|spam\b)/ig.test("1Spam"));//true
+
+
+//---------------------------------------------------------------------------------------------------------------
+/*
+    Regular expression
+
+    Quantifires
+    n+..... One or more
+    n*..... zero or more
+    n?..... zero or one
+*/
+
+console.log("####".repeat(10));
+
+let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@gmail.ru";
+let mailsRegEx = /\w+@\w+.(com|net)/ig;
+console.log(mails.match(mailsRegEx));// ['osama@gmail.com', 'elzero@gmail.net']
+mailsRegEx = /\w+@\w+.\w+/ig;
+console.log(mails.match(mailsRegEx));// ['o@nn.sa', 'osama@gmail.com', 'elzero@gmail.net', 'osama@gmail.ru']
+
+
+nums = "0110 10 150 05120 0560 350 00";
+numsRegEx = /\b0\d*0\b/ig;
+console.log(nums.match(numsRegEx));//['0110', '05120', '0560', '00']
+
+
+//give me valid emails
+let urls = "https://google.com http://www.website.net web.com facebook.com www.facebook.com HH@.com HH123@@Hello.yehoo";
+let urlsRegEx = /((https?:\/\/)?(www.)?)?\w+.(com|net)/ig; //only in s?
+console.log(urls.match(urlsRegEx));
+// ['https://google.com', 'http://www.website.net', 'web.com', 'facebook.com', 'www.facebook.com']
