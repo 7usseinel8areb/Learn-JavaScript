@@ -149,11 +149,17 @@ let range = {
     max: 20
 }
 
-let checkInRange = function (arr, { min: mn, max: mx} = range) {
+let checkInRange = function (arr,{ min: mn, max: mx} = range) {
     return arr.some(function (element) {
         return element >= this.mn && element <=this.mx;
     },{mn,mx})
 }
+//Another way
+// checkInRange = function (arr,s = ({ min: mn, max: mx} = range)) {
+//     return arr.some(function (element) {
+//         return element >= this.min && element <=this.max;
+//     },s)
+// }
 
 myArray = [1, 2, 3, 30, 10, 39];
 console.log(checkInRange(myArray, range));//t
