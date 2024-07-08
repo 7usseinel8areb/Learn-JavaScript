@@ -275,3 +275,25 @@ let urls = "https://google.com http://www.website.net web.com facebook.com www.f
 let urlsRegEx = /((https?:\/\/)?(www.)?)?\w+.(com|net)/ig; //only in s?
 console.log(urls.match(urlsRegEx));
 // ['https://google.com', 'http://www.website.net', 'web.com', 'facebook.com', 'www.facebook.com']
+
+//---------------------------------------------------------------------------------------------------------------
+/*
+    Regular expression
+
+    Quantifires
+    n{x}..... Number of
+    n{x,y}..... Range
+    n{x,}..... at least x
+*/
+
+
+let serials = "S100S S3000S S50000S S950000S S300S";
+
+let serialRegEx = /\bS\d{3}S\b/ig;
+console.log(serials.match(serialRegEx));// S[Three Numbers]S // ['S100S', 'S300S']
+
+serialRegEx = /\bS\d{4,5}S\b/ig;
+console.log(serials.match(serialRegEx));// S[Four or five]S // ['S3000S', 'S50000S']
+
+serialRegEx = /\bS\d{4,}S\b/ig;
+console.log(serials.match(serialRegEx));// S[At least four]S // ['S3000S', 'S50000S', 'S950000S']
