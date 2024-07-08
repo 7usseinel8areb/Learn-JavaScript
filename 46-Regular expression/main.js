@@ -107,3 +107,55 @@ let practice = "Os1 Os1Os Os2 Os8 Os8Os";
 let practiceRegEx = /Os[5-9]Os/ig;
 console.log(practice.match(practiceRegEx));//['Os8Os']
 
+//---------------------------------------------------------------------------------------------------------------
+/*
+    Regular Expression
+        part2let
+            1) [a-z] => a to z
+            2) [^a-z] => not a to z
+            3) [A-Z] => A to Z
+            4) [^A-Z] => not A to Z
+            5) [abc] => from this 3 chars only
+            6) [^abc] => not from this 3 chars
+*/
+
+console.log("####".repeat(10));
+
+myString = "AaBbcdefG123!234%^&*";
+
+
+let aTOzRegEx = /[a-z]/g;
+console.log(myString.match(aTOzRegEx))// ['a', 'b', 'c', 'd', 'e', 'f']
+
+let ATOZRegEx = /[A-Z]/g;
+console.log(myString.match(ATOZRegEx))// ['A', 'B', 'G']
+
+let notaTOzRegEx = /[^a-z]/g;
+console.log(myString.match(notaTOzRegEx))// ['A', 'B', 'G', '1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+
+let notATOZRegEx = /[^A-Z]/g;
+console.log(myString.match(notATOZRegEx))// ['a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+
+
+let abcRegEx = /[abc]/g;
+console.log(myString.match(abcRegEx));// ['a', 'b', 'c']
+
+let notabcRegEx = /[^abc]/g;
+console.log(myString.match(notabcRegEx));// ['A', 'B', 'd', 'e', 'f', 'G', '1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+
+
+let allAlphaSmallAndcapitalRegEx = /([a-z]|[A-Z])/g;
+let allAlphaSmallAndcapitalRegEx2 = /[a-z]/ig;
+let allAlphaSmallAndcapitalRegEx3 = /[a-zA-Z]/g;
+console.log(myString.match(allAlphaSmallAndcapitalRegEx));//['A', 'a', 'B', 'b', 'c', 'd', 'e', 'f', 'G']
+console.log(myString.match(allAlphaSmallAndcapitalRegEx2));//['A', 'a', 'B', 'b', 'c', 'd', 'e', 'f', 'G']
+console.log(myString.match(allAlphaSmallAndcapitalRegEx3));//['A', 'a', 'B', 'b', 'c', 'd', 'e', 'f', 'G']
+
+let nonAlphaRegex = /[^a-zA-Z]/g;
+console.log(myString.match(nonAlphaRegex));//['1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+
+let onlySpecialRegEx = /[@!#$%^&*]/g;
+let onlySpecialRegEx2 = /[^a-zA-Z0-9]/g;
+console.log(myString.match(onlySpecialRegEx));// ['!', '%', '^', '&', '*']
+console.log(myString.match(onlySpecialRegEx2));// ['!', '%', '^', '&', '*']
+
