@@ -166,3 +166,27 @@ console.log(checkInRange(myArray, range));//t
 
 myArray = [1, 2, 3, 4, 5, 6];
 console.log(checkInRange(myArray, range));//f
+console.log("####".repeat(10));
+//---------------------------------------------------------------------------------------------------
+/*
+    Array Methods
+        array.every(callBackFunction(element, index, arr),this)
+        => all elements must equal to the given condition but some only one element
+*/
+
+myNumber = 10
+myArray = [1, 2, 3, 4, 5];
+check = myArray.every(function (element, index, array) {
+    return element <= this;
+}, myNumber);
+
+console.log(check);//t
+
+myNumber = 10
+myArray = [1, 2, 3, 4, 5 ,20];
+check = myArray.every(function (element, index, array) {
+    return element <= this;
+}, myNumber);
+
+console.log(check);//f
+
