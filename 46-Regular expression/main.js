@@ -159,3 +159,48 @@ let onlySpecialRegEx2 = /[^a-zA-Z0-9]/g;
 console.log(myString.match(onlySpecialRegEx));// ['!', '%', '^', '&', '*']
 console.log(myString.match(onlySpecialRegEx2));// ['!', '%', '^', '&', '*']
 
+//---------------------------------------------------------------------------------------------------------------
+/*
+    Regular Expression
+        Charachter classes
+            . => matches any charachter, except newline or other line terminators
+            \w => matches word chars. [a-z, A-Z, 0-9 and _ ]
+            \W => matches non word chars
+            \d => matches digits from 0-9
+            \D => matches non digit chars
+            \s => matches whitespace char
+            \S => matches non whitspace chars
+*/
+
+console.log("####".repeat(10));
+
+let email = 'O@@@g...com O@g.com O@g.net A@Y.com O-g.com o@s.org 1@1.com';
+
+let dot = /./g;
+console.log(email.match(dot))
+/*      Ans
+['O', '@', '@', '@', 'g', '.', '.', '.', 'c', 'o', 'm', ' ', 'O', 
+'@', 'g', '.', 'c', 'o', 'm', ' ', 'O', '@', 'g', '.', 'n', 'e', 
+'t', ' ', 'A', '@', 'Y', '.', 'c', 'o', 'm', ' ', 'O', '-', 'g', 
+'.', 'c', 'o', 'm', ' ', 'o', '@', 's', '.', 'o', 'r', 'g', ' ',
+'1', '@', '1', '.', 'c', 'o', 'm']
+*/
+
+let word = /\w/g;
+console.log(email.match(word));
+/*      Ans
+['O', 'g', 'c', 'o', 'm', 'O', 'g', 'c', 'o', 'm', 'O', 'g', 'n', 'e',
+'t', 'A', 'Y', 'c', 'o', 'm', 'O', 'g', 'c', 'o', 'm', 'o', 's', 'o', 
+'r', 'g', '1', '1', 'c', 'o', 'm']
+*/
+
+let Word = /\W/g;
+console.log(email.match(Word));
+/*
+['@', '@', '@', '.', '.', '.', ' ', '@', '.', ' ', '@', '.', ' ', '@', 
+'.', ' ', '-', '.', ' ', '@', '.', ' ', '@', '.']
+*/
+
+//To find valid emails and ends with com and net
+let valid = /\w@\w.(com|net)/g;
+console.log(email.match(valid));//['O@g.com', 'O@g.net', 'A@Y.com', '1@1.com']
