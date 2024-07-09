@@ -45,3 +45,31 @@ let userOne = new User(4, "Hussein", 20000);
 
 console.log(userOne instanceof User);//t
 console.log(userOne.constructor === User);//t
+
+//------------------------------------------------------------------------------------------
+/*
+    OOP
+        Constructor
+            Dealing with properties and mehtods
+*/
+console.log("#####".repeat(8));
+
+
+class UserX{
+    constructor(id, username, salary) {
+        this.i = id;
+        this.un = username || "Unkown";
+        this.s = salary;
+        // this.msg = function () {
+        //     return `Hello ${this.un}, Your salary is ${this.s}`
+        // }
+    }
+
+    //Method 
+    msg() {
+        return `Hello ${this.un}, Your salary is ${this.s}`
+    }
+}
+
+let userTwo = new UserX(1, "", 20000);
+console.log(userTwo.msg());
