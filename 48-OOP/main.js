@@ -22,4 +22,26 @@ const user3 = new User(3, "Alaa", 9000);
 
 console.log(user1.userName, "=>",user1.userSalary)
 console.log(user2.userName, "=>",user2.userSalary)
-console.log(user3.userName, "=>",user3.userSalary)
+console.log(user3.userName, "=>", user3.userSalary)
+
+
+//------------------------------------------------------------------------------------------
+/*
+    OOP
+        Constructor new syntax with ES2015
+*/
+
+console.log("#####".repeat(8));
+
+class User{
+    constructor(id, username, salary) {
+        this.i = id;
+        this.un = username;
+        this.s = salary;
+    }
+}
+
+let userOne = new User(4, "Hussein", 20000);
+
+console.log(userOne instanceof User);//t
+console.log(userOne.constructor === User);//t
