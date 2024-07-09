@@ -351,5 +351,3 @@ console.log(txt.replaceAll('@', 'Javascript'));
 
 let regEx = /@/ig;
 console.log(txt.replaceAll(regEx, 'Javascript'));
-
-
