@@ -73,3 +73,43 @@ class UserX{
 
 let userTwo = new UserX(1, "", 20000);
 console.log(userTwo.msg());
+
+
+//------------------------------------------------------------------------------------------
+/*
+    OOP
+        Update properties and Built in constructors
+*/
+console.log("#####".repeat(8));
+
+
+class UserY {
+    constructor(id, username, salary) {
+        this.i = id;
+        this.un = username || "Unkown";
+        this.s = salary;
+    }
+
+    updateName(newName) {
+        this.un = newName;
+    }
+}
+
+let userThree = new UserY(1, "", 20000);
+console.log(userThree.un);
+
+userThree.updateName("Hussein");
+console.log(userThree.un);
+
+let strOne = "Hussein";
+let strTwo = new String("Hussein");
+
+console.log(typeof strOne);//Str
+console.log(typeof strTwo);//Obj
+
+console.log(strOne instanceof String);//false
+console.log(strTwo instanceof String);//true
+
+//Both of them use constructor string to build
+console.log(strOne.constructor === String);//true
+console.log(strTwo.constructor === String);//true
