@@ -325,3 +325,31 @@ console.log(/^\s/ig.test(names));//f
 
 console.log(names.match(/\d\w{5}(?=Z)/ig));// ['1Osama', '2Ahmed', '5Gamal']
 console.log(names.match(/\d\w{8}(?!Z)/ig));// ['3Mohammed']
+
+
+//---------------------------------------------------------------------------------------------------------------
+/*
+    Regular expression
+
+    replace
+    replaceAll
+*/
+
+console.log("####".repeat(10));
+
+let txt = "We Love Programming And @ Beacause @ Is Amazing";
+console.log(txt.replace('@', 'Javascript'));
+/*
+    The first only
+    We Love Programming And Javascript Beacause @ Is Amazing
+*/
+console.log(txt.replaceAll('@', 'Javascript'));
+/*
+    The first only
+    We Love Programming And Javascript Beacause Javascript Is Amazing
+*/
+
+let regEx = /@/ig;
+console.log(txt.replaceAll(regEx, 'Javascript'));
+
+
