@@ -113,3 +113,58 @@ console.log(strTwo instanceof String);//true
 //Both of them use constructor string to build
 console.log(strOne.constructor === String);//true
 console.log(strTwo.constructor === String);//true
+
+
+//------------------------------------------------------------------------------------------
+/*
+    OOP
+        Class
+            Static properties & methods
+            بمعنى لو عملت ستاتيك بروبيرتي مثلا هعرف اوصلها من البيرنت نفسه انما الانيستنس مش هعرف
+*/
+
+
+class User{
+    count = 0;
+    constructor(name, salary) {
+        this.n = name;
+        this.s = salary;
+    }
+}
+let newUser = new User("Hussein", 60000);
+console.log(newUser.n);//Hussein
+console.log(newUser.s);//60000
+console.log(newUser.count);//0
+console.log(User.count);//undefined
+
+
+
+class User{
+    static count = 0;
+    constructor(name, salary) {
+        this.n = name;
+        this.s = salary;
+        User.count++;
+    }
+
+    static sayHello() {
+        return `Hello from class`;
+    }
+
+    static countMembers() {
+        return `${this.count} Members`;
+    }
+}
+//static can be accessed only by parent class
+
+let newUser2 = new User("Hussein", 60000);
+console.log(newUser2.n);//Hussein
+console.log(newUser2.s);//60000
+console.log(newUser2.count);//undefined
+console.log(User.count);//0
+//console.log(newUser2.sayHello());//Error can't be accessed
+console.log(User.sayHello());//Hello from class
+
+let newUser3 = new User("Mohamed", 10000);
+
+console.log(User.countMembers());//2 mem
