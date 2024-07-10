@@ -168,3 +168,41 @@ console.log(User.sayHello());//Hello from class
 let newUser3 = new User("Mohamed", 10000);
 
 console.log(User.countMembers());//2 mem
+
+
+
+//------------------------------------------------------------------------------------------
+/*
+    OOP
+        Class
+            Inheritance
+*/
+
+
+class User
+{
+    position = "newUser";
+    constructor(name, age, salary) {
+        this.na = name;
+        this.ag = age;
+        this.sa = salary;
+    }
+}
+
+
+class Admin extends User // Inheritance
+{
+    position = "Admin";
+    constructor(name, age, salary, permission){
+        super(name, age, salary);
+        this.pe = permission;
+    }
+}
+
+let ins = new Admin("Hussein",20, 20000 ,"add");
+console.log(ins);//Admin { na: 'Hussein', ag: 20, sa: 20000, pe: 'add' }
+console.log(ins.position);//newUser after inheritance it will be Admin because if there is prop with same name it will be overrided
+
+// ins.position = "Admin"
+
+// console.log(ins.position);//newUser
