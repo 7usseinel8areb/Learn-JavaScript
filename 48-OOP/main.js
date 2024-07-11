@@ -282,3 +282,43 @@ class User
 
 let userA = new User(1, "Hussein");
 console.log(User.prototype);//the features can be used
+
+
+//------------------------------------------------------------------------------------------
+/*
+    prototype
+        Add to prototype chain
+        Extend buuilt in constructors features ازود امكانيات الكونستركتور
+*/
+class User
+{
+    constructor(id, username) {
+        this.id = id;
+        this.name = username;
+    }
+    sayHello() {
+        return 'Hello from the class';
+    }
+}
+
+let userB = new User(1, "Hussein");
+console.log(User.prototype);//the features can be used
+
+
+//Adding method to User class
+User.prototype.saywelcome = function () {
+    return 'Welcome';
+}
+
+console.log(userB.saywelcome());//Welcome
+
+Object.prototype.love = "I love you";
+console.log(userB.love);//I love you
+
+
+String.prototype.addFullName = function (first) {
+    return `${this} Elghareb`;
+}
+
+let first = "Hussein";
+console.log(first.addFullName());
