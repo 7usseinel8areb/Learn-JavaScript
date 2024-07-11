@@ -206,3 +206,58 @@ console.log(ins.position);//newUser after inheritance it will be Admin because i
 // ins.position = "Admin"
 
 // console.log(ins.position);//newUser
+
+
+
+//------------------------------------------------------------------------------------------
+/*
+    OOP
+        Class
+            Encapsulation
+                Class fields are public by default
+                Guards the data against illegable access 
+                Helps to achieve the target without revealling its complex details
+                Will reduce human errors
+                Make the app more flexible and managable
+                Simplifies the app
+*/
+class User
+{
+    constructor(name, age, salary) {
+        this.na = name;
+        this.ag = age;
+        this.sa = salary;
+    }
+}
+
+let user9 = new User("Hussein", 20, 10000);
+console.log(user9.sa * 0.3);
+
+//what if??
+user9 = new User("Hussein", 20, "10000 L.E.");
+console.log(user9.sa * 0.3);//NaN
+
+
+class User
+{
+    // private property
+    #sa;
+
+    constructor(name, age, salary) {
+        this.na = name;
+        this.ag = age;
+        //to make a private field add # before it
+        this.#sa = salary;
+    }
+
+    getSalary() {
+        return parseInt(this.#sa);
+    }
+}
+
+user9 = new User("Hussein", 20, "10000 L.E.");
+//console.log(user9.#sa * 0.3);//private field can't be accessed only bby family class the allowable scope
+console.log(user9.getSalary() * 0.3);//3000
+
+user9 = new User("Hussein", 20, "Error");
+console.log(user9.getSalary() * 0.3);//NaN
