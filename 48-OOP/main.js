@@ -408,3 +408,27 @@ console.log(delete myObj1.c);//t
 console.log(delete myObj1.d);//f
 console.log(delete myObj1.e);//f
 //Note that d & e was not can't be deleted
+
+
+console.log(Object.getOwnPropertyDescriptor(myObj1,'a'));
+console.log(Object.getOwnPropertyDescriptor(myObj1,'b'));
+console.log(Object.getOwnPropertyDescriptor(myObj1,'c'));
+console.log(Object.getOwnPropertyDescriptor(myObj1,'d'));
+console.log(Object.getOwnPropertyDescriptor(myObj1, 'e'));
+/*
+{ value: 1, writable: true, enumerable: true, configurable: true }
+{ value: 2, writable: true, enumerable: true, configurable: true }
+undefined
+{ value: 100, writable: true, enumerable: false, configurable: false }
+{ value: 5, writable: false, enumerable: true, configurable: false }
+*/
+
+console.log(Object.getOwnPropertyDescriptors(myObj1));
+/*
+{
+  a: { value: 1, writable: true, enumerable: true, configurable: true },
+  b: { value: 2, writable: true, enumerable: true, configurable: true },
+  d: { value: 100, writable: true, enumerable: false, configurable: false},
+  e: { value: 5, writable: false, enumerable: true, configurable: false }
+}
+*/
