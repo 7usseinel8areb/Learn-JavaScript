@@ -261,3 +261,24 @@ console.log(user9.getSalary() * 0.3);//3000
 
 user9 = new User("Hussein", 20, "Error");
 console.log(user9.getSalary() * 0.3);//NaN
+
+//------------------------------------------------------------------------------------------
+/*
+    Prototype
+        => Mecyhanism by which js objects inhrits features from one another
+*/
+
+
+class User
+{
+    constructor(id, username) {
+        this.id = id;
+        this.name = username;
+    }
+    sayHello() {
+        return 'Hello from the class';
+    }
+}
+
+let userA = new User(1, "Hussein");
+console.log(User.prototype);//the features can be used
