@@ -356,3 +356,55 @@ for (let i in myObj) {
 
 //if the configurable is false then it will not be deleted and the property can't be redefined if true it can be
 console.log(delete myObj.c);
+
+//------------------------------------------------------------------------------------------
+/*
+    Object metadata & descriptor
+        Define multible properties
+        Check Descriptors
+*/
+
+const myObj1 = {
+    a: 1,
+    b: 2
+};
+
+Object.defineProperties(myObj1, {
+    c: {
+        configurable: true,
+        value: 3
+    },
+    d: {
+        writable: true,
+        value: 4
+    },
+    e: {
+        enumerable: true,
+        value: 5
+    }
+});
+
+for (let i in myObj1) {
+    console.log(i, myObj1[i]);
+    /*
+        a 1
+        b 2
+        e 5
+    */
+    //Not that c & d doesn't exist
+}
+
+myObj1.c = 100;
+myObj1.d = 100;
+myObj1.e = 100;
+
+console.log(myObj1.c);//3
+console.log(myObj1.d);//100
+console.log(myObj1.e);//5
+//Note that c & e was not overrided or changed
+
+
+console.log(delete myObj1.c);//t
+console.log(delete myObj1.d);//f
+console.log(delete myObj1.e);//f
+//Note that d & e was not can't be deleted
