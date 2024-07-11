@@ -322,3 +322,37 @@ String.prototype.addFullName = function (first) {
 
 let first = "Hussein";
 console.log(first.addFullName());
+
+//------------------------------------------------------------------------------------------
+/*
+    Object metadata & descriptor
+        writable
+        enumerable
+        configurable [Cann't be delete or reconfigure]
+*/
+
+const myObj = {
+    a: 1,
+    b: 2
+};
+
+Object.defineProperty(myObj, "c", {
+    // writable: false,
+    writable:true,
+    //enumerable: false,
+    enumerable: true,
+    //configurable: false,
+    configurable: true,
+    value:3
+});
+myObj.c = 100//if writable true it will be changed if not it will be ignored
+console.log(myObj);//{ a: 1, b: 2, c: 3 }
+
+
+//c will not be printed because the enumerable is false if true it will be print
+for (let i in myObj) {
+    console.log(i, myObj[i]);
+}
+
+//if the configurable is false then it will not be deleted and the property can't be redefined if true it can be
+console.log(delete myObj.c);
