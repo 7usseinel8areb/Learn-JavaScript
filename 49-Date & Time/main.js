@@ -22,3 +22,34 @@ let years = days / 365;
 console.log(years);//54
 
 console.log(2024 - 1970);//54
+
+
+
+//--------------------------------------------------------------------------------------
+/*
+    Date & Time
+        Methods
+            getDate() => Day of the month
+            getTime() => Number of millyseconds
+            getFullYear()
+            getMonth() => Zero Based
+            getDay() => Day of the week
+            getHours()
+            getMinutes()
+            getSeconds()
+*/
+
+dateNow = new Date();
+let birthday = new Date('Dec 20, 2003');
+console.log(birthday);
+
+let dateDiff = dateNow - birthday;
+console.log(dateDiff / 1000 / 60 / 60 / 24 / 365);//20 years old
+
+console.log(dateNow.getDate());// 13 from 13 / 7 /2024
+console.log(dateNow.getTime());
+console.log(dateNow.getDay());
+console.log(dateNow.getHours());
+console.log(dateNow.getMinutes());
+console.log(dateNow.getMonth());//0 index ex: month 7 will print 6
+console.log(dateNow.getFullYear());
