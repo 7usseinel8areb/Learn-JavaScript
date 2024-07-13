@@ -53,3 +53,40 @@ console.log(dateNow.getHours());
 console.log(dateNow.getMinutes());
 console.log(dateNow.getMonth());//0 index ex: month 7 will print 6
 console.log(dateNow.getFullYear());
+
+
+//--------------------------------------------------------------------------------------
+/*
+    Date & Time
+        Methods
+            setTime(ms)
+            setDate() => Day of the month [- or +]
+            setFullYear(year, month => opt [0,11], Day => opt [1,31])
+            setMonth(Month [0,11], Day => opt [1,31] [- or +])
+            setHours(Hours [0-23, minutes => opt [0, 59, seconds => opt [0-59], ms => opt [0,999]]])
+            setMinutes(minutes [0,59] ,seconds => opt [0-59], ms => opt [0,999])
+            setSeconds(seconds => opt [0-59], ms => opt [0,999])
+*/
+
+dateNow = new Date();
+console.log(dateNow);
+console.log("#".repeat(30));
+
+dateNow.setTime(0);
+console.log(dateNow);//1970 1 1
+
+dateNow.setTime(10000000);
+console.log(dateNow);//1970 1 1
+
+dateNow.setTime(Date.now());
+dateNow.setDate(1);
+console.log(dateNow);
+dateNow.setDate(-1);
+console.log(dateNow);
+
+dateNow.setFullYear(2024, 11, 20);//2024-12-20
+console.log(dateNow);
+
+
+dateNow.setFullYear(2024, 12, 60);//2025-03-01
+console.log(dateNow);
