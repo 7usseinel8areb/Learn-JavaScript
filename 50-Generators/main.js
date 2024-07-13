@@ -32,3 +32,43 @@ for (let i of generatNumbers()) {
 for (let i of generator) {
     console.log(i);
 }
+
+//--------------------------------------------------------------------------------------
+/*
+    Generators
+        Delegate generators
+*/
+function* generatNums() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+function* generatLetters() {
+    yield 'A';
+    yield 'B';
+    yield 'C';
+}
+
+function* generatAll() {
+    yield* generatNums();//delegate
+    yield* generatLetters();//delegate
+    yield* [1, 2, 3];
+    yield [1, 2, 3];// will output Array not the items of the array
+    yield generatNums();//will output function name
+}
+
+let generate = generatAll();
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+//console.log(generate.return("Stop Here")); //to stop generating
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
