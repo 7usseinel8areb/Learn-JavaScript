@@ -90,3 +90,29 @@ console.log(dateNow);
 
 dateNow.setFullYear(2024, 12, 60);//2025-03-01
 console.log(dateNow);
+
+
+//--------------------------------------------------------------------------------------
+/*
+    Date & Time
+        Track operation time
+    
+    Search
+        performance.now()
+        performance.mark()
+*/
+//Start time
+let Start = new Date();
+
+//Operation
+for (let i = 0; i < 100000; i++) {
+    document.write(`<div> ${i} </div>`)
+}
+
+//End time
+let End = new Date()
+
+// Operation Duration
+
+let Duration = End - Start;
+console.log(Duration);
