@@ -72,3 +72,29 @@ console.log(generate.next());
 console.log(generate.next());
 console.log(generate.next());
 console.log(generate.next());
+
+
+
+
+//--------------------------------------------------------------------------------------
+/*
+    Generate infinite numbers
+*/
+
+function* GenerateNums() {
+    let index = 0;
+    while (true) {
+        yield index++;
+    }
+}
+generator = GenerateNums();
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+/*
+{ value: 0, done: false }
+{ value: 1, done: false }
+{ value: 2, done: false }
+{ value: 3, done: false }
+*/
